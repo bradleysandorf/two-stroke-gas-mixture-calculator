@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Stroke Gas Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="article_area">
+        <h1>Two Stroke Gasoline Mixture Calculator</h1>
+
+        <!-- Description of calculator -->
+        <p>
+            Two stroke engines, commonly found in chainsaws, leaf blowers, outboard engines, pressure washers, and
+            other smaller engines require a specific mixture of gasoline and oil to run properly.
+            Failing to add the proper amount of oil to your gasoline/ petrol mixture can cause serious damage to your
+            engine, as two stroke engines are lubricated by the oil in their gas/ oil mixture. This calculator can help
+            you determine the correct amount of oil that you
+            need to add to your gasoline to ensure that the proper ratio of gasoline to oil is achieved.
+            Typically, you can find the ratio needed for your two stroke engine in your owner's manual or printed on the
+            side of the engine.
+        </p>
+
+        <div id="calculator-flex-box">
+            <h2>Calculator</h2>
+
+            <!-- Input area for amount with input validation, allowing decimal places with "value='.' " -->
+            <p>Amount: <input type="number" name="Quantity" id="Quantity" min="0"
+                    oninput="validity.valid||(value == ''||value == '.');">
+                <select name="units" id="units">
+                    <option id="gallons" value="gallons">Gallons</option>
+                    <option id="liters" value="liters">Liters</option>
+                </select>
+            </p>
+
+            <!-- Input for ratio, drop down box -->
+            <p> Ratio:
+                <select name="ratio" id="ratio">Ratio
+                    <option value="50">50</option>
+                    <option value="40">40</option>
+                    <option value="32">32</option>
+                </select> : 1
+            </p>
+
+            <!-- div that contains submit and reset buttons, using bootstrap for styling -->
+            <div id="submit-reset-bar">
+                <button class="btn btn-warning" id="calc-button" onclick="calculateMixture()">Calculate</button>
+                <button class="btn btn-danger" id="reset-button" onclick="reset()">Reset</button>
+            </div>
+
+            <!-- After calculation, response is injected into the h3 -->
+            <div class="result_wrapper">
+                <div class="result">
+                    <h3 id="display_box"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
